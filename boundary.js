@@ -16,7 +16,7 @@ function Boundary(posX, posY, w, h, a) {
     push();
     translate(this.pos.x, this.pos.y);
     rotate(this.body.angle);
-    //noStroke();
+    // stroke(0);
     fill(180);
     rect(0, 0, w, h);
     pop();

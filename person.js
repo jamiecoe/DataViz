@@ -1,13 +1,14 @@
-function Person(posX, posY, radius) {
+function Person(posX, posY) {
 
   var options = {
-    restitution: 0.6
+    friction: 1
   }
 
-  this.body = Bodies.circle(posX, posY, radius, options);
+  this.radius = 5;
+  this.diameter = this.radius * 2;
+
+  this.body = Bodies.circle(posX, posY, this.radius, options);
   this.pos = this.body.position;
-  this.radius = radius;
-  this.diameter = radius * 2;
   this.angle = this.body.angle;
 
   // add all of the bodies to the world
@@ -18,7 +19,7 @@ function Person(posX, posY, radius) {
     push();
     translate(this.pos.x, this.pos.y);
     rotate(this.angle);
-    noStroke();
+    stroke(0);
     fill(255);
     ellipse(0, 0, this.diameter, this.diameter);
     pop();
